@@ -5,9 +5,14 @@
 @endsection
 
 @section('content')
-    <h2>ยินดีต้อนรับเข้าสู่เว็บไซต์ของฉัน</h2>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem eveniet, quis odit architecto illum
-        dicta
-        earum totam aliquam id, corrupti consectetur delectus corporis sapiente minus. Amet optio inventore ipsa ut!
-    </p>
+    <h2>บทความล่าสุด</h2>
+    <hr>
+    @forelse ($blogs as $item)
+        <h2>{{ $item->title }}</h2>
+        <p>{{ Str::limit($item->content, 30) }}</p>
+        <a href="/detail/{{ $item->id }}">อ่านเพิ่มเติม</a>
+    @empty
+        <p class="text-center py-2">ยังไม่มีบทความในขณะนี้</p>
+    @endforelse
+    <hr>
 @endsection

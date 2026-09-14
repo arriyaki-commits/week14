@@ -18,7 +18,7 @@
 
         <div class="form-group">
             <label for="title">เนื้อหาบทความ: </label>
-            <textarea name="content" class="form-control" cols="50" rows="5">{{ $blogs->content }}</textarea>
+            <textarea name="content" id="content" class="form-control" cols="50" rows="5">{{ $blogs->content }}</textarea>
         </div>
 
         @error('content')
